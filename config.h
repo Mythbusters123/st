@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=18:antialias=true:autohint=true" };
+static char *font = "FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true";
+static char *font2[] = { "JoyPixels:pixelsize=14:antialias=true:autohint=true" , "Liberation Mono" };
 static int borderpx = 2;
 
 /*
@@ -78,7 +78,7 @@ const int boxdraw = 1;
 const int boxdraw_bold = 0;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 0;
+const int boxdraw_braille = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -113,23 +113,24 @@ float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
-	[255] = 0,
+	[0] = "#171b23",
+    [1] = "#be5046",
+    [2] = "#98c379",
+    [3] = "#d19a66",
+    [4] = "#61afef",
+    [5] = "#c678dd",
+    [6] = "#56b6c2",
+    [7] = "#828997",
+    /* Bright colors */
+    [8] = "#5c6370",
+    [9] = "#e06c75",
+    [10]= "#98c379",
+    [11] = "#e5c07b",
+    [12] = "#61afef",
+    [13] = "#c678dd",
+    [14] = "#56b6c2",
+    [15] = "#abb2bf",
+    [255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#add8e6", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
@@ -555,3 +556,4 @@ static char ascii_printable[] =
 	" !\"#$%&'()*+,-./0123456789:;<=>?"
 	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 	"`abcdefghijklmnopqrstuvwxyz{|}~";
+
